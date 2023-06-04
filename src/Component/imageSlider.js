@@ -1,0 +1,60 @@
+
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import "./style.css"
+import React from 'react'
+import '../App.css'
+import garri from '../resource/garri.png'
+import egusi from '../resource/egusi.jpg'
+import plantain from '../resource/plantain.jpg'
+import yam from '../resource/yams.jpg'
+
+const ProductCart = (props) => {
+    return(
+        <div className='cartContainer'>
+                <img src={props.food} alt='garri' />
+            
+            <div className='textContainer'>
+            <span style={{fontSize:'1.2em',fontWeight:'bold ',marginBottom:'2em'}}>Calabar Garri</span><br/>
+                <span style={{fontSize:'1em',fontWeight:'bold ', marginTop:'0.2em'}}>2,000 XAF</span>
+                
+            </div>
+
+        </div>
+    )
+}
+const ImageSlider = ({images}) =>{
+
+    const settings = {
+        infinite:true,
+        dots:true,
+        slidesToShow:2,
+        slidesToScroll:1,
+        lazyLoad:true,
+        autoplay:true,
+        autoplaySpeed:2000,
+    };
+
+    return (
+        <>
+        
+        <div className="tag">
+        <h1>Image Gallery</h1>
+        </div>
+
+        <div className="imgSlider">
+
+            <Slider {...settings}>
+                <ProductCart food={garri}/>
+                <ProductCart food={egusi}/>
+                <ProductCart food={plantain}/>
+                <ProductCart food={yam}/>
+
+            </Slider>
+        </div>
+        </>
+    )
+}
+
+export default ImageSlider;
