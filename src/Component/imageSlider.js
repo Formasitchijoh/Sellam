@@ -24,7 +24,7 @@ const ProductCart = (props) => {
         </div>
     )
 }
-const ImageSlider = ({images}) =>{
+const ImageSlider = () =>{
 
     const settings = {
         infinite:true,
@@ -38,18 +38,14 @@ const ImageSlider = ({images}) =>{
 
     return (
         <>
-        
-        <div className="tag">
-        <h1>Image Gallery</h1>
-        </div>
-
-        <div className="imgSlider">
-
+    
+        <div >
+        <h1>My Products</h1>
             <Slider {...settings}>
-                <ProductCart food={garri}/>
-                <ProductCart food={egusi}/>
-                <ProductCart food={plantain}/>
-                <ProductCart food={yam}/>
+                <ProductCart className="item" food={garri}/>
+                <ProductCart className="item" food={egusi}/>
+                <ProductCart className="item" food={plantain}/>
+                <ProductCart className="item" food={yam}/>
 
             </Slider>
         </div>
