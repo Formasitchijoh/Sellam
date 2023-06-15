@@ -4,7 +4,19 @@
 
 
 @layer components {
-  .my-component {
-    @apply  text-3xl font-bold underline text-red-700 ;
+  .App{
+    @apply w-screen h-screen flex items-center justify-center overflow-hidden;
   }
+/* .Tabs{
+  @apply w-10/12 h-auto bg-#053742 mt-14 mx-auto mb-6 px-4 py-8 text-white bg-blue-200 rounded-full md:px-0 md:py-8;
+} */
+.ul.nav {
+  @apply w-3/5 mt-0 mx-auto mb-8 flex items-center justify-between rounded-s-3xl pl-0 md:w-11/12;
+}
+.ul.nav li{
+  @apply w-1/2 p-4 list-none text-center cursor-pointer transition-all duration-700 rounded-bl-lg rounded-tl-lg;
+}
+.nav li:nth-child(2) {
+  @apply rounded-r-lg;
+}
 }
