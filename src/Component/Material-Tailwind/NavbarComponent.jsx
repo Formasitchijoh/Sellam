@@ -32,7 +32,8 @@ const NavbarComponent = () => {
       variant='small'
       color="blue-gray"
       className="p-1 font-normal">
-        <a href='#' className='flex items-center text-white'>Shops</a></Typography>
+        <Link to='/LoginPage'  className='flex items-center text-white'>Shops</Link>
+        </Typography>
         <Typography
       as="li"
       variant='small'
