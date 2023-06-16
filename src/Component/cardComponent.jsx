@@ -15,7 +15,7 @@ const CardComponent = (props) => {
       <CardHeader shadow={false} floated={false} className="h-30">
         <img 
         src={props.image}
-          className="w-full h-full object-cover"
+          className="w-screen h-full object-cover"
         />
       </CardHeader>
       <CardBody>
