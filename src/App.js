@@ -1,31 +1,24 @@
 import './App.css';
+import React from 'react';
+import { BrowserRouter,Route,Routes } from 'react-router-dom';
+import ProductItem from './Pages/ProductItem';
 import ProductPage from './Pages/ProductPage';
-import ImageSlider from './Component/imageSlider';
-import images from './resource/images';
-import SelectDropDown from './Component/SelectDropDown';
-import Menu from './Component/Menu';
-import BuyerPage from './Pages/BuyerPage';
-import SecondTab from './Component/AllTabs/SecondTab';
-import FirstTab from './Component/AllTabs/FirstTab';
-function App() {
+import CardComponent from './Component/cardComponent';
+import SignUpPage from './Pages/SignUpPage';
+
+const App = () => {
   return (
-   <div class='App'>
-    {/* <ProductPage/> */}
-    {/* <BuyerPage /> */}
-    <SecondTab/>
-    {/* <FirstTab/> */}
-   </div>
+   <BrowserRouter>
+   
+   <Routes>
+    <Route exact path='/' Component={ProductItem}/>
+   <Route path='/ProductPage' Component={ProductPage}/>
+   <Route path='/CardComponent' Component={CardComponent}/>
+   <Route path='/SignUpPage' Component={SignUpPage}></Route>
+   </Routes>
+   </BrowserRouter>
+
   );
-}
+};
 
 export default App;
-// export default function App() {
-//   return (
-//     <h1>
-
-// <div class="my-component">
-//   This is my custom component.
-// </div>
-// ```    </h1>
-//   )
-// }

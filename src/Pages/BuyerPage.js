@@ -8,6 +8,7 @@ import selectItems from '../Component/datastore'
 import garri from '../resource/garri.png'
 import egusi from '../resource/egusi.jpg'
 import yam from '../resource/yams.jpg'
+import CardComponent from '../Component/cardComponent'
 
 const ProductCarts = (props) => {
     return(

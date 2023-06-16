@@ -1,8 +1,18 @@
 import React from 'react'
 import ImageSlider from '../Component/imageSlider'
+import NavbarComponent from '../Component/Material-Tailwind/NavbarComponent'
+import Tabs from '../Component/Tabs'
+import SearchComponent from '../Component/SearchComponent'
 const ProductItem = () => {
   return (
-    <div>ProductItem</div>
+    <div >
+      <NavbarComponent/>
+      <div className='mx-auto max-w-screen-lg bg-green-50  py-12'>
+      <SearchComponent/>
+      <Tabs/>
+      </div>
+      
+    </div>
   )
 }
 
