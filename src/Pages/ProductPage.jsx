@@ -13,7 +13,7 @@ import { Card } from '@material-tailwind/react'
 
 const ProductCarts = (props) => {
   return(
-      <div className='ml-2 bg-green-100 border-5 border-teal-300 flex flex-col h-1/4 w-1/4 xl:w-1/2 xl:h-1/4 justify-center items-center rounded-lg shadow-sm mt-2'>
+      <div className='ml-2 bg-green-100 border-5 border-teal-300 flex flex-col h-1/4 w-1/4 xl:w-1/2 xl:h-1/4 justify-center items-center rounded-lg shadow-sm '>
               <img className='w-1/2 h-20 pt-2' src={props.food} alt='garri' />
           
           <div className=''>
@@ -29,7 +29,7 @@ const ProductPage = () => {
   return (
 
     <div >
-        <ul className='flex flex'>
+        <ul className='grid xl:grid-cols-4 xl:gap-4 sm:grid-cols-2 '>
           <CardComponent image={yam}/>
           <CardComponent image={egusi}/>
           <CardComponent image={garri}/>

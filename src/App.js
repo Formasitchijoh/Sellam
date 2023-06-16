@@ -5,6 +5,7 @@ import ProductItem from './Pages/ProductItem';
 import ProductPage from './Pages/ProductPage';
 import CardComponent from './Component/cardComponent';
 import SignUpPage from './Pages/SignUpPage';
+import LoginPage from './Pages/LoginPage';
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
    <Route path='/ProductPage' Component={ProductPage}/>
    <Route path='/CardComponent' Component={CardComponent}/>
    <Route path='/SignUpPage' Component={SignUpPage}></Route>
+   <Route path='/LoginPage' Component={LoginPage}/>
    </Routes>
    </BrowserRouter>
 
