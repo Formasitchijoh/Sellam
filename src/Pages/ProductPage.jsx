@@ -8,56 +8,43 @@ import SelectDropDown from '../Component/SelectDropDown'
 import InfiniteScroll from 'react-infinite-scroll-component'
 import Menu from '../Component/Menu'
 import selectItems from '../Component/datastore'
+import CardComponent from '../Component/cardComponent'
+import { Card } from '@material-tailwind/react'
 
 const ProductCarts = (props) => {
   return(
-      <div className='cartContainer scroll'>
-              <img src={props.food} alt='garri' />
-          <div className='textContainer scrollItem'>
-          <span style={{fontSize:'1.2em',fontWeight:'bold ',marginBottom:'2em'}}>Calabar Garri</span><br/>
-              <span style={{fontSize:'1em',fontWeight:'bold ', marginTop:'0.2em'}}>2,000 XAF</span>
+      <div className='ml-2 bg-green-100 border-5 border-teal-300 flex flex-col h-1/4 w-1/4 xl:w-1/2 xl:h-1/4 justify-center items-center rounded-lg shadow-sm mt-2'>
+              <img className='w-1/2 h-20 pt-2' src={props.food} alt='garri' />
+          
+          <div className=''>
+          <span className='text-xl font-serif font-sans text-gray-800 tracking-tighter font-semibold mt-1 '>Calabar Garri</span><br/>
+              <span className='text-xl font-serif font-sans text-gray-800 tracking-tighter font-semibold mt-1'>2,000 XAF</span>
               
-          </div> 
+          </div>
 
       </div>
   )
 }
-
-const InfiniteProductScroll =() =>{
-  return(
-    <div>
-  <InfiniteScroll 
-    
-    dataLength={6}
-    // next={fetchData}
-    hasMore={true}
-    loader={<p>Loading .....</p>}
-    endMessage={<p>No more data to load</p>}
-    >
-      <h1 style={{fontSize:'2em', marginTop:'2em', marginLeft:'0.4em'}}>All Products</h1>
-      <ul style={{marginTop:'em'}}>
-        <ProductCarts food={garri}/>
-        <ProductCarts food={egusi}/>
-        <ProductCarts food={yam}/>
-        <ProductCarts food={yam}/>
-        <ProductCarts food={garri}/>
-        <ProductCarts food={egusi}/>
-      </ul>
-
-    </InfiniteScroll>
-    {/* {error && <p>Error:{error.message}</p>} */}
-    </div>
-   
-  )
-}
-
 const ProductPage = () => {
   return (
+
     <div >
-        <Menu/>
-        <SelectDropDown selectItems={selectItems}/> 
-        <ImageSlider/>
-        <InfiniteProductScroll/>
+        <ul className='flex flex'>
+          <CardComponent image={yam}/>
+          <CardComponent image={egusi}/>
+          <CardComponent image={garri}/>
+          <CardComponent image={yam}/>
+          <CardComponent image={egusi}/>
+          <CardComponent image={garri}/>
+          <CardComponent image={yam}/>
+
+        {/* <ProductCarts food={garri}/>
+        <ProductCarts food={egusi}/>
+        <ProductCarts food={yam}/>
+        <ProductCarts food={yam}/>
+        <ProductCarts food={garri}/>
+        <ProductCarts food={egusi}/> */}
+      </ul>
        
     </div>
   )
