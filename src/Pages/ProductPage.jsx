@@ -38,12 +38,7 @@ const ProductPage = () => {
           <CardComponent image={garri}/>
           <CardComponent image={yam}/>
 
-        {/* <ProductCarts food={garri}/>
-        <ProductCarts food={egusi}/>
-        <ProductCarts food={yam}/>
-        <ProductCarts food={yam}/>
-        <ProductCarts food={garri}/>
-        <ProductCarts food={egusi}/> */}
+       
       </ul>
        
     </div>

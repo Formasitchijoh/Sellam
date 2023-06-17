@@ -32,14 +32,14 @@ const NavbarComponent = () => {
       variant='small'
       color="blue-gray"
       className="p-1 font-normal">
-        <Link to='/LoginPage'  className='flex items-center text-white'>Shops</Link>
-        </Typography>
+        <Link to='/AddProductPage'  className='flex items-center text-white' > AddProduct</Link>
+       </Typography>
         <Typography
       as="li"
       variant='small'
       color="blue-gray"
       className="p-1 font-normal">
-        <Link to='/CardComponent'  className='flex items-center text-white' >Products</Link>
+        <Link to='/LoginPage'  className='flex items-center text-white' >Products</Link>
         {/* <a href='#' className='flex items-center text-white'>Products</a> */}
         </Typography>
         <Typography
