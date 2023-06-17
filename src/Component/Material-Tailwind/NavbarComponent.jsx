@@ -49,6 +49,7 @@ const NavbarComponent = () => {
       className="p-1 font-normal">
                 <Link to='/ItemPage'  className='flex items-center text-white' >ProductItem</Link>
         </Typography>
+       
         <Typography
       as="li"
       variant='small'
