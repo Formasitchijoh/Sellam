@@ -9,6 +9,7 @@ import LoginPage from './Pages/LoginPage';
 import NavbarComponent from './Component/Material-Tailwind/NavbarComponent';
 import AddProductPage from './Pages/AddProductPage';
 import SpeedDials from './Pages/SpeedDial';
+import ItemPage from './Pages/ItemPage';
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
    <Route path='/SignUpPage' Component={SignUpPage}></Route>
    <Route path='/LoginPage' Component={LoginPage}/>
    <Route path='/AddProductPage' Component={AddProductPage}/>
+   <Route path='/ItemPage' Component={ItemPage}/>
    </Routes>
    </BrowserRouter>
 

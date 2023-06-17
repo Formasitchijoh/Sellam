@@ -47,8 +47,16 @@ const NavbarComponent = () => {
       variant='small'
       color="blue-gray"
       className="p-1 font-normal">
+                <Link to='/ItemPage'  className='flex items-center text-white' >ProductItem</Link>
+        </Typography>
+        <Typography
+      as="li"
+      variant='small'
+      color="blue-gray"
+      className="p-1 font-normal">
                 <Link to='/SignUpPage'  className='flex items-center text-white' >SignUp</Link>
         </Typography>
+
 
     </ul>
   )
