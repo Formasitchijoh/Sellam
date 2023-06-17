@@ -1,81 +1,50 @@
 import React from 'react'
-import { Select, Option } from "@material-tailwind/react";
 import garri from '../resource/garri.png'
-import {
-    IconButton,
-    SpeedDial,
-    SpeedDialHandler,
-    SpeedDialContent,
-    SpeedDialAction,
-  } from "@material-tailwind/react";
-  import {
-    PlusIcon,
-    HomeIcon,
-    CogIcon,
-    Square3Stack3DIcon,
-  } from "@heroicons/react/24/outline";
+import Select from 'react-select';
+import NavbarComponent from '../Component/Material-Tailwind/NavbarComponent';
+
+const options = [
+  { value: 'option1', label: 'Option 1' },
+  { value: 'option2', label: 'Option 2' },
+  { value: 'option3', label: 'Option 3' }
+];
+
+
 const AddProductPage = () => {
   return (
-    <div className='max-w-screen-xl bg-red-300 h-100 mx-auto mt-20 flex flex-col justify-center items-center gap-3'>
+    
+    < div className='flex flex-col '>
+          <NavbarComponent/>
+          <div className='max-w-screen-xl bg-green-50 px-3   h-100 mx-auto flex flex-col justify-center items-center  gap-3'>
+      <label className='text-lg text-gray-700 font-bold font-sans ml-3'>Category</label>
+    <Select
+    placeholder='Category'
+    className='w-11/12  ml-3  h-5 mb-5 xl:w-1/2'
+    options={options} />
+          <label className='text-lg text-gray-700 font-bold font-sans ml-3'>Product Name</label>
+      <Select
+      placeholder='Product Name'
+    className='w-11/12  ml-3  h-5 mb-5 xl:w-1/2 '
+    options={options} />
 
-        <div className='bg-green-500 w-full h-full'>
-            {/* <p>Add Products</p> */}
-        <div className="absolute bottom-0 left-0">
-        <SpeedDial placement="right" className='w-20 h-20 bg-teal-900'>
-          <SpeedDialHandler>
-            <IconButton size="lg" className="rounded-full">
-              <PlusIcon className="h-5 w-5 transition-transform group-hover:rotate-45" />
-            </IconButton>
-          </SpeedDialHandler>
-          <SpeedDialContent className="flex-row">
-            <SpeedDialAction>
-              <HomeIcon className="h-5 w-5" />
-            </SpeedDialAction>
-            <SpeedDialAction>
-              <CogIcon className="h-5 w-5" />
-            </SpeedDialAction>
-            <SpeedDialAction>
-              <Square3Stack3DIcon className="h-5 w-5" />
-            </SpeedDialAction>
-          </SpeedDialContent>
-        </SpeedDial>
-      </div>
-        </div>
-        <div class="relative inline-block w-64">
-            <label className='font-sans text-gray-300 text-2xl'> Category</label>
-  <select class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
-    <option>Cash Crops</option>
-    <option>Cereals</option>
-    <option>Utencils</option>
-  </select>
-  <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-    <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M14.95 7.95a1 1 0 01-1.41 0L10 4.91l-3.54 3.54a1 1 0 01-1.41-1.41l4-4a1 1 0 011.41 0l4 4a1 1 0 010 1.41z"/></svg>
-  </div>
-</div>
+<label className='text-lg text-gray-700 font-bold font-sans ml-3'>Select Image</label>
 
-<div class="relative inline-block w-64">
-<label className='font-sans text-gray-300 text-2xl'> Product Name</label>
-  <select class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
-    <option>Coacoa</option>
-    <option>Coffe</option>
-    <option>Banana</option>
-  </select>
-  <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-    <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M14.95 7.95a1 1 0 01-1.41 0L10 4.91l-3.54 3.54a1 1 0 01-1.41-1.41l4-4a1 1 0 011.41 0l4 4a1 1 0 010 1.41z"/></svg>
-  </div>
-</div>
+<div className='w-1/2 h-1/2 flex justify-center items-center  bg-blue-500 p-12  '>
 
-<div className='w-1/4 h-full bg-blue-600 p-12  '>
-
-    <div className='bg-purple-200 p-10'>
+    <div className='bg-teal-200 relative p-10 mx-auto opacity-70'>
         <img src={garri} alt=''/>
     </div>
     <div className='w-full h-10'>
-    <button type="submit" className='rounded-sm  mt-1 text-lg bg-green-950  text-white' >Sign up to drive</button>
+    <button type="submit" className=' absolute left-1/4 opacity-30 rounded-sm  mt-1 text-lg bg-green-950  text-white' >Upload Image</button>
     </div>
 </div>
 
+<button type="submit" className=' w-1/2 h-10 mx-auto rounded-full  mt-1 text-lg bg-green-950  text-white' >Upload Image</button>
+
     </div>
+
+    </div>
+    
 
 
   )
