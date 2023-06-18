@@ -32,15 +32,29 @@ const NavbarComponent = () => {
       variant='small'
       color="blue-gray"
       className="p-1 font-normal">
-        <Link to='/LoginPage'  className='flex items-center text-white'>Shops</Link>
+        <Link to='/AddProductPage'  className='flex items-center text-white' > AddProduct</Link>
+       </Typography>
+        <Typography
+      as="li"
+      variant='small'
+      color="blue-gray"
+      className="p-1 font-normal">
+        <Link to='/LoginPage'  className='flex items-center text-white' >Products</Link>
+        {/* <a href='#' className='flex items-center text-white'>Products</a> */}
         </Typography>
         <Typography
       as="li"
       variant='small'
       color="blue-gray"
       className="p-1 font-normal">
-        <Link to='/CardComponent'  className='flex items-center text-white' >Products</Link>
-        {/* <a href='#' className='flex items-center text-white'>Products</a> */}
+                <Link to='/ItemPage'  className='flex items-center text-white' >ProductItem</Link>
+        </Typography>
+        <Typography
+      as="li"
+      variant='small'
+      color="blue-gray"
+      className="p-1 font-normal">
+                <Link to='/LandingPage'  className='flex items-center text-white' >LandingP</Link>
         </Typography>
         <Typography
       as="li"
@@ -49,6 +63,7 @@ const NavbarComponent = () => {
       className="p-1 font-normal">
                 <Link to='/SignUpPage'  className='flex items-center text-white' >SignUp</Link>
         </Typography>
+
 
     </ul>
   )
