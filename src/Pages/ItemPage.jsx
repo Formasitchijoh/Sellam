@@ -5,6 +5,7 @@ import garri from '../resource/garri.png'
 import egusi from '../resource/egusi.jpg'
 import yam from '../resource/yams.jpg'
 import NavbarComponent from "../Component/Material-Tailwind/NavbarComponent";
+import Select from "react-select";
 
  const CarouselData = [
     {
@@ -29,6 +30,12 @@ import NavbarComponent from "../Component/Material-Tailwind/NavbarComponent";
     },
   ];
  
+  
+  const options = [
+    { value: 'option1', label: 'Option 1' },
+    { value: 'option2', label: 'Option 2' },
+    { value: 'option3', label: 'Option 3' }
+  ];
   
   class ItemPage extends Component {
     constructor(props) {
@@ -132,8 +139,15 @@ import NavbarComponent from "../Component/Material-Tailwind/NavbarComponent";
             <h3 className="w-full mt-4 h-10 gap-5 text-xl font-sans" > <span className="inline-block float-left mr-5">Price</span><span  className="inline-block float-right">2000/1kg</span> </h3><hr className="w-full h-1" />
             <h3 className="w-full mt-4 h-10 gap-5 text-xl font-sans" > <span className="inline-block float-left mr-5">Quantity</span><span  className="inline-block float-right">2000/1kg</span> </h3><hr className="w-full h-1" />
             <h3 className="w-full mt-4 h-10 gap-5 text-xl font-sans" > <span className="inline-block float-left mr-5">Location</span><span  className="inline-block float-right">Bamilagui</span> </h3><hr className="w-full h-1" />
-
+            <div className='w-full xl:w-full mt-5 '>
+            <label className='text-lg text-gray-700  font-sans ml-3'>Category</label>
+              <Select
+              placeholder='Category'
+              className='w-full    h-5 mb-5 xl:w-full'
+              options={options} />
+            </div>
          </div>
+        
          <button className='bg-teal-900 w-1/3 xl:w-1/4 h-8 rounded-md text-lg text-white mt-5'> Place Order</button>
         </div>
         </>
