@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState} from 'react'
 import garri from '../resource/garri.png'
 import Select from 'react-select';
 import NavbarComponent from '../Component/Material-Tailwind/NavbarComponent';
@@ -18,7 +18,21 @@ function Fab() {
   );
 }
 
+const Addpdt = () => {
+ 
+  fetch(' https://192.168.43.56/market_management/THE%20NEW/add_productt.php')
+  .then(response => response.json())
+  .then(data => {
+    console.log(data);
+  });
+}
 const AddProductPage = () => {
+  const [newProduct, setnewProduct] = useState({
+    category:'',
+    name:'',
+    price:'',
+  })
+  
   return (
     
     < div className='flex flex-col  '>
