@@ -33,10 +33,10 @@ const ProductPage = () => {
           <CardComponent image={yam}/>
           <CardComponent image={egusi}/>
           <CardComponent image={garri}/>
-          <CardComponent image={yam}/>
+          {/* <CardComponent image={yam}/>
           <CardComponent image={egusi}/>
           <CardComponent image={garri}/>
-          <CardComponent image={yam}/>
+          <CardComponent image={yam}/> */}
 
        
       </ul>
