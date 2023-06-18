@@ -2,6 +2,7 @@ import React, { useState, useEffect} from 'react'
 import { Navbar, MobileNav, Typography, Button, IconButton, Card } from '@material-tailwind/react'
 import { Link } from 'react-router-dom'
 import Menu from '../Menu'
+import avatar from '../../resource/egusi.jpg'
 const NavbarComponent = () => {
 
   const [openNav, setOpenNav] = useState(false)
@@ -125,13 +126,30 @@ const NavbarComponent = () => {
 
           </IconButton>
           {isOpen && (
-          <ul className="bg-teal-200 absolute left-0 top-10 w-3/4 h-screen ">
-<li className='border-b-2  w-full border-gray-900'>Home</li>
-<li className='border-b-2 w-full border-gray-900'>Shops</li>        
-<li className='border-b-2 w-full border-gray-900'>Products</li>
-<li className='border-b-2 w-full border-gray-900'>Markets</li>          
-<li className='border-b-2 w-full border-gray-900'>Login</li>  
-        </ul>
+           <div >
+           
+     <ul className="bg-teal-200 absolute left-0 top-10 w-3/4 h-screen mb-10 ">
+          <div className='flex flex-col justify-center items-center mt-5'>
+              <img  className='w-1/4 h-1/4 rounded-full bg-white' src={avatar} alt='avatar' />
+              <p className='text-gray-900 text-xl'>Abomganu Alfred</p>
+              </div>
+              {/* <Link to='/'>Home</Link>
+              <Link to='ProductPage'>Shops</Link>
+              <Link to='SignUpPage'>SignUp</Link>
+              <Link to='LoginPage'>Login</Link>
+              <Link to='AddProductPage'>AddProduct</Link>
+              <Link to='LandingPage'>LandingPage</Link>
+              <Link to='ItemPage'>Item</Link> */}
+
+              <li className='border-b-2  w-full border-gray-900'>Home</li>
+              <li className='border-b-2 w-full border-gray-900'>Shops</li>        
+              <li className='border-b-2 w-full border-gray-900'>Products</li>
+              <li className='border-b-2 w-full border-gray-900'>Markets</li>          
+              <li className='border-b-2 w-full border-gray-900'>Login</li>  
+                      </ul>
+           </div>
+
+  
          )} 
         </div>
       </div>

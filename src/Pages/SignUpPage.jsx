@@ -36,10 +36,10 @@ const MyPasswordInput = ({label, isvisible, handleHidePassword,handleShowPasswor
         <label htmlFor={props.id || props.name} className='text-lg font-sans font-bold text-gray-500'>{label}</label>
        {/* <div className='flex justify-end items-end'> */}
        <input  {...field} {...props}  className=' w-full h-10 lg:w-4/5 border-solid-3 focus-visible: border-gray-300 rounded'></input>
-       {isvisible ==="password"?( <img  src={hideeye}  onClick={handleHidePassword} className=' absolute w-4 h-6 mb-0.5 rounded-sm bg-green-100 left-20
+       {/* {isvisible ==="password"?( <img  src={hideeye}  onClick={handleHidePassword} className=' absolute w-4 h-6 mb-0.5 rounded-sm bg-green-100 left-20
         ' alt=""/>): (
                 <img src={eye} alt=""  className=' absolute  w-4 h-6 mb-0.5 rounded-sm bg-green-50' onClick={handleShowPassword}/>
-        )}
+        )} */}
        {/* </div> */}
         
         {meta.touched && meta.error ?
@@ -132,9 +132,9 @@ const validationSchema =
     return( 
         <div>
            <NavbarComponent/>
-           <div className='mx-auto max-w-screen-lg   lg:w-full lg:h-full p-5   mt-10 bg-red-50  py-12 flex flex-col justify-center items-center'>
-            <h1 className='font-sans font-bold text-white text-gray-900 text-4xl'>Sign Up</h1>
-        <div className='bg-teal-50 w-full h-full mr-5 ml-5 '> 
+           <div className='mx-auto max-w-screen-lg bg-teal-100   lg:w-full lg:h-full p-5   mt-10  py-12 flex flex-col justify-center items-center'>
+            <h1 className='font-sans font-bold mb-5 text-gray-900 text-4xl'>Sign Up</h1>
+        <div className=' w-full h-full mr-5 ml-5 '> 
         <Formik className="formik" initialValues={initialValues}  onSubmit={onSubmit} validationSchema={validationSchema}>
         {(formik) => (
          <Form className='w-1/2 h-1/4 mx-auto py-5'>

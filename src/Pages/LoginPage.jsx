@@ -51,7 +51,6 @@ const LoginPage = () => {
     //defined states
     const [isShow, setisShow] = useState(false);
      const [initialValues, setinitialValues]  = useState({
-       
         contact:"",
          password:'',
          
@@ -66,6 +65,11 @@ const handleShowPassword =() => {
 
 }
 
+const handleSubmit = (e) =>{
+    const [data , value] = e.target
+    // setinitialValues({...initialValues,[name]:value})
+
+}
 
 
     return( 
@@ -85,7 +89,7 @@ const handleShowPassword =() => {
             <hr className='w-2/5 h-1 bg-gray-500'></hr>
 
         </div>
-      <button type="submit" className='w-1/4 h-10 rounded text-2xl font-bold flex justify-center items-center mx-auto  mt-8 bg-green-950  text-white' >Login</button>
+      <button type="submit" className='w-1/4 h-10 rounded text-2xl font-bold flex justify-center items-center mx-auto  mt-8 bg-green-950  text-white' onClick={()=> alert('Hello word')} >Login</button>
     </form> 
      
       
