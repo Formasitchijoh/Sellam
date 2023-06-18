@@ -7,24 +7,24 @@ import * as Yup from 'yup'
 import NavbarComponent from '../Component/Material-Tailwind/NavbarComponent';
 import { Link } from 'react-router-dom';
 import design from '../resource/figma.png'
+import axios from 'axios';
 
-const MyTextInput = () =>{
+
+const MyTextInput = ({handleContact,value}) =>{
     return (
         <div className='w-full mx-auto flex flex-col p-3 mb-3'>
         <label  className='text-lg  font-sans font-bold text-gray-500'>Contact</label>
-        <input className='w-full h-10 lg:w-4/5 border-solid-3 focus-visible:  rounded' />
+        <input className='w-full h-10 lg:w-4/5 border-solid-3 focus-visible:  rounded' name='contact' value={value} onChange={handleContact} />
         </div>
     );
 };
-const MyPasswordInput = () =>{
+const MyPasswordInput = ({handleContact}) =>{
     
     return (
         <div className='w-full mx-auto  flex flex-col p-3 mt-3'>
         <label  className='text-lg font-sans font-bold text-gray-500'>Password</label>
-       {/* <div className='flex justify-end items-end'> */}
-       <input className=' w-full h-10 lg:w-4/5 border-solid-3 focus-visible: border-gray-300 rounded'></input>
+       <input className=' w-full h-10 lg:w-4/5 border-solid-3 focus-visible: border-gray-300 rounded' name='passwd' onChange={handleContact}></input>
        
-       {/* </div> */}
       
 
         </div>
@@ -49,27 +49,34 @@ const MyCheckbox = () => {
 const LoginPage = () => {  
 
     //defined states
-    const [isShow, setisShow] = useState(false);
-     const [initialValues, setinitialValues]  = useState({
-        contact:"",
-         password:'',
-         
-      });
-const [isvisible, setisvisible] = useState("password") 
+  
+    const [contact, setContact] = useState('')
+   const [passwd, setPasswd] = useState('')
+   const [loginDetails, setLoginDetails] = useState({
+    contact:'',
+    passwd:''
+   })
+   
 
-const handleHidePassword =() =>{ 
-    setisvisible("text")
-}
-const handleShowPassword =() => {
-    setisvisible("password")
+           function handleLoginDetails(e) {
+            setLoginDetails({...loginDetails, [e.target.name]:e.target.value})}
 
-}
+        const handleSubmit = (e) => {
+                e.preventDefault();
 
-const handleSubmit = (e) =>{
-    const [data , value] = e.target
-    // setinitialValues({...initialValues,[name]:value})
+                axios
+                .post('https://192.168.43.56/market_management/THE%20NEW/loginn.php',loginDetails,{
+                    headers:{"Content-Type":"application/json",},
+                } )
 
-}
+                .then(response => {
+                alert(response.data)
+                
+                })
+                .catch(error => {
+                console.log(error);
+                });
+        }
 
 
     return( 
@@ -79,9 +86,15 @@ const handleSubmit = (e) =>{
                  <h1 className='  font-sans font-bold lg:text-6xl text-gray-700  text-4xl'>Sign In</h1>
                  </div>
         <div className='  lg:px-5 h-1/2 w-full bg-teal-50 flex flex-col justify-center items-center p-2'>
-        <form className= 'w-full lg:mx-auto h-full mx-auto py-5'>
-      <MyTextInput label=" Name" name="firstName" type="text" />
-      <MyPasswordInput label='PassWord' name='password' type={isvisible} className="password" isvisible={isvisible} handleHidePassword={handleHidePassword} handleShowPassword={handleShowPassword}/>
+        <form onSubmit={handleSubmit} className= 'w-full lg:mx-auto h-full mx-auto py-5'>
+        <div className='w-full mx-auto flex flex-col p-3 mb-3'>
+        <label  className='text-lg  font-sans font-bold text-gray-500'>Contact</label>
+        <input className='w-full h-10 lg:w-4/5 border-solid-3 focus-visible:  rounded' name='contact' value={loginDetails.contact} onChange={handleLoginDetails} />
+        </div>
+        <div className='w-full mx-auto flex flex-col p-3 mb-3'>
+        <label  className='text-lg  font-sans font-bold text-gray-500'>Password</label>
+        <input className='w-full h-10 lg:w-4/5 border-solid-3 focus-visible:  rounded' name='passwd' value={loginDetails.passwd} onChange={handleLoginDetails} />
+        </div>
     <p className='ml-4 text-sm'>  Don't have an account</p>
       <div className='w-full gap-2 flex justify-start ml-2 items-center mt-2 '>
             <hr className='w-2/5 h-1 bg-gray-500'></hr>
@@ -89,7 +102,7 @@ const handleSubmit = (e) =>{
             <hr className='w-2/5 h-1 bg-gray-500'></hr>
 
         </div>
-      <button type="submit" className='w-1/4 h-10 rounded text-2xl font-bold flex justify-center items-center mx-auto  mt-8 bg-green-950  text-white' onClick={()=> alert('Hello word')} >Login</button>
+      <button type="submit" className='w-1/4 h-10 rounded text-2xl font-bold flex justify-center items-center mx-auto  mt-8 bg-green-950  text-white' >Login</button>
     </form> 
      
       
