@@ -19,9 +19,9 @@ import { Link } from 'react-router-dom';
 const MyTextInput = ({label, setradioInput,  ...props}) =>{
     const [field, meta] = useField(props);
     return (
-        <div className='w-3/4 mx-auto h-full flex flex-col p-3 bg-gray-200 mb-3'>
+        <div className='w-fullmx-auto h-full flex flex-col p-3  mb-3'>
         <label htmlFor={props.id || props.name} className='text-lg font-sans font-bold text-gray-500'>{label}</label>
-        <input className='w-full h-7 bg-teal-50 border-solid-3 border-gray-300 rounded-md' {...field} {...props}/>
+        <input className='w-full h-10 lg:w-4/5 border-solid-3 focus-visible:  rounded' {...field} {...props}/>
         {meta.touched && meta.error ?
          (<div className='text-red-500 text-sm '>{meta.error}</div>):null}
 
@@ -32,14 +32,15 @@ const MyPasswordInput = ({label, isvisible, handleHidePassword,handleShowPasswor
     
     const [field, meta] = useField(props);
     return (
-        <div className='w-3/4 mx-auto h-full flex flex-col p-3 bg-gray-200 mt-3'>
+        <div className='w-full mx-auto h-full flex flex-col p-3  mt-3'>
         <label htmlFor={props.id || props.name} className='text-lg font-sans font-bold text-gray-500'>{label}</label>
-       <div className='flex justify-end items-end'>
-       <input  {...field} {...props} className=' w-full h-7 bg-teal-50 border-solid-3 border-gray-300 rounded-md'></input>
-       {isvisible ==="password"?( <img  src={hideeye}  onClick={handleHidePassword} className=' absolute w-4 h-6 mb-0.5 rounded-sm bg-green-100 ' alt=""/>): (
+       {/* <div className='flex justify-end items-end'> */}
+       <input  {...field} {...props}  className=' w-full h-10 lg:w-4/5 border-solid-3 focus-visible: border-gray-300 rounded'></input>
+       {isvisible ==="password"?( <img  src={hideeye}  onClick={handleHidePassword} className=' absolute w-4 h-6 mb-0.5 rounded-sm bg-green-100 left-20
+        ' alt=""/>): (
                 <img src={eye} alt=""  className=' absolute  w-4 h-6 mb-0.5 rounded-sm bg-green-50' onClick={handleShowPassword}/>
         )}
-       </div>
+       {/* </div> */}
         
         {meta.touched && meta.error ?
          (<div className='error'>{meta.error}</div>):null}
@@ -129,10 +130,10 @@ const validationSchema =
 
 
     return( 
-        <>
+        <div>
            <NavbarComponent/>
-           <div className='mx-auto max-w-screen-xl bg-teal-50  py-12 flex flex-col justify-center items-center'>
-            <h1 className='font-sans font-bold text-white text-gray-500 text-4xl'>Sign Up</h1>
+           <div className='mx-auto max-w-screen-lg   lg:w-full lg:h-full p-5   mt-10 bg-red-50  py-12 flex flex-col justify-center items-center'>
+            <h1 className='font-sans font-bold text-white text-gray-900 text-4xl'>Sign Up</h1>
         <div className='bg-teal-50 w-full h-full mr-5 ml-5 '> 
         <Formik className="formik" initialValues={initialValues}  onSubmit={onSubmit} validationSchema={validationSchema}>
         {(formik) => (
@@ -144,14 +145,14 @@ const validationSchema =
        <MyPasswordInput label='ConfirmPassWord' name='confirmpassword' type={isvisible} className="password" isvisible={isvisible} handleHidePassword={handleHidePassword} handleShowPassword={handleShowPassword}/>
        
 
-       <div className='flex flex-col justify-center items-start ml-20 mt-2'>
-       <p className='have-account'>Already have an account?<Link to="/LoginPage">Login</Link></p>
-          <MyCheckbox name="acceptedTerms">
-             I accept the terms and conditions
-          </MyCheckbox>
-          <button type="submit" className='w-1/4 h-10 rounded-sm  mt-1 text-lg bg-green-950  text-white' >Sign up to drive</button>
+       <p className='ml-4 text-sm'>  Already have an account</p>
+      <div className='w-full gap-2 flex justify-start ml-2 items-center mt-2 '>
+            <hr className='w-2/5 h-1 bg-gray-500'></hr>
+            <p className='font-sans text-sm text-green-900 font-bold '>Login</p>
+            <hr className='w-2/5 h-1 bg-gray-500'></hr>
 
-           </div> 
+        </div>
+      <button type="submit" className='w-1/4 h-10 rounded text-2xl font-bold flex justify-center items-center mx-auto  mt-8 bg-green-950  text-white' >Login</button>
       
       {isShow ? ( <div className='main-modal'>
              <div>
@@ -186,7 +187,7 @@ const validationSchema =
          </div>
          </div>
         
-        </>
+        </div>
      
        
      );
