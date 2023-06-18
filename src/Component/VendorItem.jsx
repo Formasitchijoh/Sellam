@@ -1,8 +1,8 @@
 import { React, useState } from "react";
 //import styles from "./VendorItem.module.css";
-import delet from "../resource/delete.png";
-import discount from "../resource/discount.png";
-import edit from "../resource/edit.png";
+import delet from "../resource/eye-1.png";
+import discount from "../resource/egusi.jpg";
+import edit from "../resource/figma.png";
 
 export default function VendorItem(props) {
   const [vissibleDis, setVissibleDis] = useState(false);
