@@ -124,65 +124,75 @@ const validationSchema =
 
 
 
-    return( 
-        <div>
-           <NavbarComponent/>
-           <div className='mx-auto max-w-screen-lg bg-teal-100   lg:w-full lg:h-full p-5   mt-10  py-12 flex flex-col justify-center items-center'>
-            <h1 className='font-sans font-bold mb-5 text-gray-900 text-4xl'>Sign Up</h1>
-        <div className=' w-full h-full mr-5 ml-5 '> 
-        <Formik className="formik" initialValues={initialValues}  onSubmit={onSubmit} validationSchema={validationSchema}>
-        {(formik) => (
-         <Form className='w-full h-1/4 mx-auto py-5'>
-      <MyTextInput label=" Name" name="name" type="text" />
-      <MyTextInput label="Contact" name="contact" type="text"  />    
-      <MyTextInput label="Email Address" name="email" type="email" /> 
-      <MyPasswordInput label='PassWord' name='password' type={isvisible} className="password" isvisible={isvisible} handleHidePassword={handleHidePassword} handleShowPassword={handleShowPassword}/>
-       <MyPasswordInput label='ConfirmPassWord' name='confirmpassword' type={isvisible} className="password" isvisible={isvisible} handleHidePassword={handleHidePassword} handleShowPassword={handleShowPassword}/>
-       
+    return (
+      <div>
+        <NavbarComponent />
+        <div className="mx-auto max-w-screen-lg bg-teal-100   lg:w-full lg:h-full p-5   mt-10  py-12 flex flex-col justify-center items-center">
+          <h1 className="font-sans font-bold mb-5 text-gray-900 text-4xl">Sign Up</h1>
+          <div className=" w-full h-full mr-5 ml-5 ">
+            <Formik className="formik" initialValues={initialValues} onSubmit={onSubmit} validationSchema={validationSchema}>
+              {(formik) => (
+                <Form className="w-full h-1/4 mx-auto py-5">
+                  <MyTextInput label=" Name" name="name" type="text" />
+                  <MyTextInput label="Contact" name="contact" type="text" />
+                  <MyTextInput label="Email Address" name="email" type="email" />
+                  <MyPasswordInput label="PassWord" name="password" type={isvisible} className="password" isvisible={isvisible} handleHidePassword={handleHidePassword} handleShowPassword={handleShowPassword} />
+                  <MyPasswordInput label="ConfirmPassWord" name="confirmpassword" type={isvisible} className="password" isvisible={isvisible} handleHidePassword={handleHidePassword} handleShowPassword={handleShowPassword} />
 
-       <p className='ml-4 text-sm'>  Already have an account</p>
-      <div className='w-full gap-2 flex justify-start ml-2 items-center mt-2 '>
-            <hr className='w-2/5 h-1 bg-gray-500'></hr>
-            <p className='font-sans text-sm text-green-900 font-bold '>Login</p>
-            <hr className='w-2/5 h-1 bg-gray-500'></hr>
+                  <p className="ml-4 text-sm"> Already have an account</p>
+                  <div className="w-full gap-2 flex justify-start ml-2 items-center mt-2 ">
+                    <hr className="w-2/5 h-1 bg-gray-500"></hr>
+                    <p className="font-sans text-sm text-green-900 font-bold ">
+                      <Link to="/LoginPage">Login</Link>
+                    </p>
+                    <hr className="w-2/5 h-1 bg-gray-500"></hr>
+                  </div>
+                  <button type="submit" className="w-1/4 h-10 rounded text-2xl font-bold flex justify-center items-center mx-auto  mt-8 bg-green-950  text-white">
+                    Sign Up
+                  </button>
 
+                  {isShow ? (
+                    <div className="bg-teal-500 absolute xl:bottom-1 bottom-1/4 w-full p-5 left-1/4 h-1/4  opacity-90 ">
+                      <div>
+                        <p>Name: {initialValues.name}</p>
+                        <p>Contact: {initialValues.contact}</p>
+
+                        <p>Email: {initialValues.email}</p>
+                        <p>PassWord: {initialValues.password}</p>
+                        <p>Cpassword: {initialValues.confirmpassword}</p>
+                      </div>
+                      <div className="w-full flex  mt-5 mb-5 justify-around items-center">
+                        <Link to="/LoginPage" className="w-1/4 h-1/4 text-white mb-5 rounded bg-green-950">
+                          <button
+                            type="reset"
+                            className="block items-center justify-center "
+                            onClick={() => {
+                              formik.resetForm();
+                              setisShow(false);
+                            }}
+                          >
+                            Confirm
+                          </button>
+                        </Link>
+
+                        <button
+                          className="w-1/4 h-1/4  text-white mb-5 rounded bg-green-950"
+                          onClick={() => {
+                            setisShow(false);
+                          }}
+                        >
+                          Edit
+                        </button>
+                      </div>
+                    </div>
+                  ) : null}
+                </Form>
+              )}
+            </Formik>
+          </div>
         </div>
-      <button type="submit" className='w-1/4 h-10 rounded text-2xl font-bold flex justify-center items-center mx-auto  mt-8 bg-green-950  text-white' >Login</button>
-      
-      {isShow ? ( <div className='bg-teal-500 absolute xl:bottom-1 bottom-1/4 w-full p-5 left-1/4 h-1/4  opacity-90 '>
-             <div>
-                <p>Name: {initialValues.name}</p>
-                <p>Contact: {initialValues.contact}</p>
-
-                <p>Email: {initialValues.email}</p>
-                <p>PassWord: {initialValues.password}</p>
-                <p>Cpassword: {initialValues.confirmpassword}</p>
-
-                </div>
-            <div className='w-full flex  mt-5 mb-5 justify-around items-center'>
-
-                <Link to='/LoginPage'  className='w-1/4 h-1/4 text-white mb-5 rounded bg-green-950'>
-                <button type="reset" className='block items-center justify-center ' onClick={()=>
-                {formik.resetForm();
-                    setisShow(false)
-                }} >Confirm</button>
-                </Link>
-                
-                <button className='w-1/4 h-1/4  text-white mb-5 rounded bg-green-950' onClick={()=> {
-                    setisShow(false)
-                }}>Edit</button>
-            </div>
-        </div>) : null }
-    </Form> 
-        )}
-      </Formik>
-         </div>
-         </div>
-        
-        </div>
-     
-       
-     );
+      </div>
+    );
  };
 
  const ImagePage = () => {
