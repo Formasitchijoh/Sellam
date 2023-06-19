@@ -31,20 +31,20 @@ const ProductPage = () => {
 
     <div >
         <ul className='grid xl:grid-cols-4 xl:gap-4 sm:grid-cols-2 '>
-          <CardComponent image={yam}/>
-          <CardComponent image={egusi}/>
-          <CardComponent image={garri}/>
-          <CardComponent image={yam}/>
-          <CardComponent image={egusi}/>
-          <CardComponent image={garri}/>
-          <CardComponent image={yam}/>
-          <CardComponent image={yam}/>
-          <CardComponent image={egusi}/>
-          <CardComponent image={garri}/>
-          <CardComponent image={yam}/>
-          <CardComponent image={egusi}/>
-          <CardComponent image={garri}/>
-          <CardComponent image={yam}/>
+          <CardComponent name='yam' price='$95' text='Everything you need' image={yam}/>
+          <CardComponent name='egusi' price='$95' text='Everything you need' image={egusi}/>
+          <CardComponent name='garri' price='$95' text='Everything you need' image={garri}/>
+          <CardComponent name='yam' price='$95' text='Everything you need' image={yam}/>
+          <CardComponent  name='egsusi' price='$95' text='Everything you need' image={egusi}/>
+          <CardComponent name='garri' price='$95' text='Everything you need' image={garri}/>
+          <CardComponent name='yam' price='$95' text='Everything you need' image={yam}/>
+          <CardComponent name='yam' price='$95' text='Everything you need' image={yam}/>
+          <CardComponent name='egusi' price='$95' text='Everything you need' image={egusi}/>
+          <CardComponent name='garri' price='$95' text='Everything you need' image={garri}/>
+          <CardComponent name='yam' price='$95' text='Everything you need' image={yam}/>
+          <CardComponent name='egusi' price='$95' text='Everything you need' image={egusi}/>
+          <CardComponent name='garri' price='$95' text='Everything you need' image={garri}/>
+          <CardComponent name='yam' price='$95' text='Everything you need' image={yam}/>
 
        
       </ul>

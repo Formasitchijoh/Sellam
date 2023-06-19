@@ -12,12 +12,12 @@ import SpeedDials from "./Pages/SpeedDial";
 import ItemPage from "./Pages/ItemPage";
 import LandingPage from "./Pages/LandingPage";
 import UpdateProduct from "./Pages/UpdateProduct";
+import TestPage from "./Pages/TestPage";
 const App = () => {
   return (
     <BrowserRouter>
-      <Routes>
-      <Route path="/" Component={ProductPage} />
-        <Route exact path="/ProductItem" Component={ProductItem} />
+      <Routes>        <Route exact path="/" Component={ProductItem} />
+      <Route path="/ProductPage" Component={ProductPage} />
         <Route path="/CardComponent" Component={CardComponent} />
         <Route path="/SignUpPage" Component={SignUpPage}></Route>
         <Route path="/LoginPage" Component={LoginPage} />
@@ -25,6 +25,7 @@ const App = () => {
         <Route path="/ItemPage" Component={ItemPage} />
         <Route path="/LandingPage" Component={LandingPage} />
         <Route path="/UpdateProduct" Component={UpdateProduct} />
+        <Route path="/TestPage" Component={TestPage}/>
       </Routes>
     </BrowserRouter>
   );
