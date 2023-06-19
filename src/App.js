@@ -16,16 +16,18 @@ import TestPage from "./Pages/TestPage";
 const App = () => {
   return (
     <BrowserRouter>
-      <Routes>        <Route exact path="/" Component={ProductItem} />
-      <Route path="/ProductPage" Component={ProductPage} />
+      <Routes>
+        {" "}
+        <Route path="/" Component={LandingPage} />
+        <Route path="/ProductPage" Component={ProductPage} />
         <Route path="/CardComponent" Component={CardComponent} />
         <Route path="/SignUpPage" Component={SignUpPage}></Route>
         <Route path="/LoginPage" Component={LoginPage} />
         <Route path="/AddProductPage" Component={AddProductPage} />
         <Route path="/ItemPage" Component={ItemPage} />
-        <Route path="/LandingPage" Component={LandingPage} />
+        <Route path="/ProductItem" Component={ProductItem} />
         <Route path="/UpdateProduct" Component={UpdateProduct} />
-        <Route path="/TestPage" Component={TestPage}/>
+        <Route path="/TestPage" Component={TestPage} />
       </Routes>
     </BrowserRouter>
   );

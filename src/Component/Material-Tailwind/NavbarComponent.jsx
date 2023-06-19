@@ -21,6 +21,11 @@ const NavbarComponent = () => {
     <ul className="mb-4 mt-2 flex flex-col gap-2 lg:mb-0 lg:flex-row lg:items-center lg:gap-6">
       <Typography as="li" variant="small" color="blue-gray" className="p-1 font-normal">
         <Link to="/" className="flex items-center text-white">
+          LandingP
+        </Link>
+      </Typography>
+      <Typography as="li" variant="small" color="blue-gray" className="p-1 font-normal">
+        <Link to="/ProductItem" className="flex items-center text-white">
           Home
         </Link>
       </Typography>
@@ -33,18 +38,13 @@ const NavbarComponent = () => {
       </Typography>
       <Typography as="li" variant="small" color="blue-gray" className="p-1 font-normal">
         <Link to="/LoginPage" className="flex items-center text-white">
-          Products
+          Login
         </Link>
         {/* <a href='#' className='flex items-center text-white'>Products</a> */}
       </Typography>
       <Typography as="li" variant="small" color="blue-gray" className="p-1 font-normal">
         <Link to="/ItemPage" className="flex items-center text-white">
           ProductItem
-        </Link>
-      </Typography>
-      <Typography as="li" variant="small" color="blue-gray" className="p-1 font-normal">
-        <Link to="/LandingPage" className="flex items-center text-white">
-          LandingP
         </Link>
       </Typography>
       <Typography as="li" variant="small" color="blue-gray" className="p-1 font-normal">
