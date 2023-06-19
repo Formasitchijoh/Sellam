@@ -92,7 +92,7 @@ const LoginPage = () => {
           </div>
           <button type="submit" className="w-1/4 h-10 rounded text-2xl font-bold flex justify-center items-center mx-auto  mt-8 bg-green-950  text-white">
            
-           <Link to="/LoginPage">Login
+           <Link to="/ProductItem">Login
            </Link> 
           </button>
         </form>
