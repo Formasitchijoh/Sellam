@@ -3,13 +3,14 @@ import { TabComponents,TabItem } from './TabComponent/Tabs'
 import ProductPage from '../Pages/ProductPage'
 import Category1 from '../Pages/Category1'
 import Category2 from '../Pages/Category2'
-const Tabs = () => {
+import BuyerPage from '../Pages/BuyerPage'
+const Tabs_Buyer = () => {
   return (
     <div>
       <TabComponents>
       
-        <TabItem label='My Products'>
-            <ProductPage/>
+        <TabItem label='Electronics'>
+            <BuyerPage/>
         </TabItem>
        
         <TabItem label="Cash Crops">
@@ -23,4 +24,4 @@ const Tabs = () => {
   )
 }
 
-export default Tabs
+export default Tabs_Buyer

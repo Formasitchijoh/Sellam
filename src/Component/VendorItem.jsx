@@ -3,6 +3,7 @@ import { React, useState } from "react";
 import delet from "../resource/delete.png";
 import discount from "../resource/discount.png";
 import edit from "../resource/edit.png";
+import { color } from "style-value-types";
 
 export default function VendorItem(props) {
   const [vissibleDis, setVissibleDis] = useState(false);
@@ -26,33 +27,33 @@ export default function VendorItem(props) {
 
   return (
     // <div class=" bg-blue-300 flex ">
-    <div class="bg-white p-2 align-top max-full h-auto inline-block sm:w-1/2 md:w-1/3 xl:w-1/4">
-      <div class="bg-gray-200 py-4 px-2 rounded-3xl">
-        <div class="rounded-2xl px-3 py-4">{props.img}</div>
+    <div class="bg-gray-300 m-auto p-2 align-top max-w-screen-xl h-1/2 inline-block w-3/4  ">
+      {/* <div class="bg-gray-200 py-4 px-2 rounded-3xl"> */}
+        <div class="rounded-2xl bg-red-500 h-1/4 px-3 py-4">{props.img}</div>
         <div class="flex justify-between px-1 ">
-          <p class=" my-2 mx-18p text-xl">{props.name}</p>
-          <p class=" my-2 mx-18p text-xl " style={{ textDecoration: props.discPrice !== 0 ? "line-through" : "none" }}>
-            CFA {props.price}
+          <p class=" my-2 mx-18p text-xl  text-gray-700 ">{props.name}</p>
+          <p class=" my-2 mx-18p text-xl font-bold text-gray-900 " style={{ textDecoration: props.discPrice !== 0 ? "line-through" : "none" , color: props.discPrice !== 0 ? "red" : "none"}}>
+            XAF {props.price}
           </p>
         </div>
         <div class=" text-lg flex justify-end">
           <p class="  mx-18p text-lg text-green-900 font-bold">CFA {props.discPrice}</p>
         </div>
-        <div class="font-semibold text-gray-700 text-lg mt-1 flex justify-end">
+        <div class="font-bold text-sm text-green-500 mt-1 flex justify-end">
           <p>{props.status}</p>
         </div>
         <div class="flex flex-row mt-6 py-1 justify-between">
-          <button class="bg-red-800 p-1 m-1 rounded-lg flex flex-row" onClick={() => setVissibleDel(true)}>
-            <img src={delet} alt="del" class="h-9 w-5" />
-            <p class="text-gray-800 ml-1 mt-1">Delete</p>
+          <button class="bg-red-800  m-1 justigy-center items-center rounded-lg flex flex-row" onClick={() => setVissibleDel(true)}>
+            <img src={delet} alt="del" class="h-5 w-5" />
+            <p class="text-gray-800 font-bold text-sm  ml-1 mt-1">Delete</p>
           </button>
-          <button class="bg-green-700 flex flex-row p-1  m-1 rounded-lg" onClick={() => setVissibleDis(true)}>
-            <img src={discount} alt="discount" class="h-9 w-6" />
-            <p class="text-gray-800 ml-1 mt-1">Discount</p>
+          <button class="bg-green-700 flex flex-row justigy-center items-center  rounded-lg" onClick={() => setVissibleDis(true)}>
+            <img src={discount} alt="discount" class="h-5 w-5 mt-2" />
+            <p class="text-gray-800 font-bold mt-1">Discount</p>
           </button>
-          <button class="bg-white flex flex-row py-1 px-3 m-1 rounded-lg" onClick={() => setVissibleEdit(true)}>
-            <img src={edit} alt="edit" class="h-9 w-5" />
-            <p class="text-gray-800 ml-1 mt-1">Edit</p>
+          <button class="bg-white flex flex-row justigy-center items-center  rounded-lg" onClick={() => setVissibleEdit(true)}>
+            <img src={edit} alt="edit" class="h-5 w-6 p-1" />
+            <p class="text-gray-800 font-bold ml-1 mt-1">Edit</p>
           </button>
         </div>
 
@@ -113,7 +114,7 @@ export default function VendorItem(props) {
             </button>
           </div> */}
         </div>
-      </div>
+      {/* </div> */}
     </div>
     // </div>
   );

@@ -11,7 +11,7 @@ import {
 
 const CardComponent = (props) => {
     return (
-    <Card className="w-full ml-3 h-3/4 bg-indigo-50 px-3 ">
+    <Card className="w-full ml-3 xl:h-full h-3/4  bg-indigo-50 px-3 ">
       <CardHeader shadow={false} floated={false} className="h-30">
         <img 
         src={props.image}

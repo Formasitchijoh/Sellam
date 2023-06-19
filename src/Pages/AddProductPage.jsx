@@ -40,7 +40,6 @@ const AddProductPage = () => {
     return(
       <img src={image} alt=''/>
     )
-    console.log(image);
   };
   useEffect(() => {
     const savedValues = localStorage.getItem('newProducts');
@@ -55,7 +54,7 @@ const AddProductPage = () => {
       category: selectedOption.value,
       name: selectedProduct.name,
       price: price,
-      image:image
+      image:URL.createObjectURL(image)
 
     };
     setNewProducts([...newProducts, newValue]);
@@ -123,12 +122,13 @@ const AddProductPage = () => {
             <Select
               placeholder='Product Name'
               value={selectedProduct}
-              
-              options={products.map((item) => ({
-                value: item.name,
-                label: item.name,
-              }))}
+              options={products}
               onChange={handleSelectProduct}
+              getOptionLabel={e => (
+                <div>
+                    <span style={{marginLeft:5}}>{e.name}</span>
+                </div>
+              )} 
               className='w-11/12  ml-3  h-5 mb-5 xl:w-3/4'
             />
           </div>
@@ -189,7 +189,7 @@ const AddProductPage = () => {
         </div>
       </form>
 
-      <div className=' xl:absolute xl:bottom-5  max-w-screen-xl bg-teal-50 px-3 xl:w-2/5  h-100 mx-auto flex flex-col justify-center items-center  mb-10 gap-3'>
+      <div className='  max-w-screen-xl bg-teal-50 px-3 xl:w-1/2  xl:h-1/2 mx-auto flex flex-col justify-center items-center  mb-10 gap-3'>
         {/* {productsCards} */}
         <ProductPage ItemCards={productsCards} />
         {/* <img src={image} alt=''/> */}
