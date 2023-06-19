@@ -73,36 +73,6 @@ const NavbarComponent = () => {
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" className="h-6 w-6" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} onClick={() => setisOpen(!isOpen)}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                 </svg>
-<<<<<<< HEAD
-
-            ):(
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth={2}
-                onClick={() => setisOpen(!isOpen)}
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              </svg>
-            ) }
-
-          </IconButton>
-          {isOpen && (
-           <div >
-           
-     <ul className="bg-teal-200 absolute left-0 top-10 w-3/4 h-screen mb-10 ">
-          <div className='flex flex-col justify-center items-center mt-5'>
-              <img  className='w-1/4 h-1/4 rounded-full bg-white' src={avatar} alt='avatar' />
-              <p className='text-gray-900 text-xl'>Abomganu Alfred</p>
-              </div>
-         
-=======
               ) : (
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth={2} onClick={() => setisOpen(!isOpen)}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
@@ -123,7 +93,6 @@ const NavbarComponent = () => {
               <Link to='AddProductPage'>AddProduct</Link>
               <Link to='LandingPage'>LandingPage</Link>
               <Link to='ItemPage'>Item</Link> */}
->>>>>>> 9fe5a7e7f0242f40a7bbcee9d43b806c6f28bd46
 
                   <li className="border-b-2  w-full border-gray-900">
                     <Link to="/ProductItem" className="flex items-center text-white">
