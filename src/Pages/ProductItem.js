@@ -3,6 +3,7 @@ import ImageSlider from '../Component/imageSlider'
 import NavbarComponent from '../Component/Material-Tailwind/NavbarComponent'
 import Tabs from '../Component/Tabs'
 import SearchComponent from '../Component/SearchComponent'
+import Category1 from './Category1'
 const ProductItem = () => {
   return (
     <div >

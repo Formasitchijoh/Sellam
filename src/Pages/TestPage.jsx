@@ -1,58 +1,40 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
-const HandleShow = (props) => {
-    return(
-        <div className='bg-red-500'>
-            <ul>
-        {props.newArray.map((value, index) => (
-          <li key={index}>{value}</li>
-        ))}
-      </ul>
-        </div>
-    )
-}
-function TestPage() {
-  // Initialize the array state with a default array
-  const [values, setValues] = useState(['apple', 'banana', 'orange']);
+const TestPage = () => {
+  const [image, setImage] = useState(null);
 
-  // useEffect hook to load the saved data from localStorage
-  useEffect(() => {
-    const savedValues = localStorage.getItem('values');
-    if (savedValues) {
-      setValues(JSON.parse(savedValues));
-    }
-  }, []);
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const newValue = event.target.elements.input.value;
-    setValues([...values, newValue]);
-    event.target.elements.input.value = '';
+  const handleImageChange = (event) => {
+    const selectedImage = event.target.files[0];
+    setImage(selectedImage);
   };
 
-  // useEffect hook to save the data to localStorage whenever the values state changes
-  useEffect(() => {
-    localStorage.setItem('values', JSON.stringify(values));
-  }, [values]);
+  const handleImageUpload = () => {
+    // Do something with the selected image, e.g., upload it to a server
+    console.log(image);
+  };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <label>
-          Input:
-          <input type="text" name="input" />
+    <div className="max-w-sm mx-auto mt-8">
+      <div className="flex items-center justify-center w-full h-48 bg-gray-100 border-dashed border-2 border-gray-400 rounded-lg">
+        {image ? (
+          <img src={URL.createObjectURL(image)} alt="Selected Image" className="h-full rounded-lg" />
+        ) : (
+          <span className="text-gray-500">Select an image</span>
+        )}
+      </div>
+      <div className="mt-4">
+        <input type="file" onChange={handleImageChange} accept="image/*" className="hidden" id="image-upload" />
+        <label htmlFor="image-upload" className="w-full px-4 py-2 text-sm text-white bg-green-500 rounded-lg cursor-pointer hover:bg-green-600 transition duration-200 ease-in-out">
+          Select Image
         </label>
-        <button type="submit">Add</button>
-      </form>
-      <ul>
-        {values.map((value, index) => (
-          <li key={index}>{value}</li>
-        ))}
-      </ul>
-      <HandleShow newArray={values} />
-      
+      </div>
+      {image && (
+        <button type="button" onClick={handleImageUpload} className="mt-4 w-full px-4 py-2 text-sm text-white bg-blue-500 rounded-lg hover:bg-blue-600 transition duration-200 ease-in-out">
+          Upload Image
+        </button>
+      )}
     </div>
   );
-}
+};
 
 export default TestPage;

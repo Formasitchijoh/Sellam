@@ -28,7 +28,20 @@ const AddProductPage = () => {
   const [selectedProduct, setselectedProduct] = useState(null);
   const [price, setPrice] = useState(0);
   const [newProducts, setNewProducts] = useState([]);
+  const [image, setImage] = useState(null);
 
+  const handleImageChange = (event) => {
+    const selectedImage = event.target.files[0];
+    setImage(selectedImage);
+  };
+
+  const handleImageUpload = () => {
+    // Do something with the selected image, e.g., upload it to a server
+    return(
+      <img src={image} alt=''/>
+    )
+    console.log(image);
+  };
   useEffect(() => {
     const savedValues = localStorage.getItem('newProducts');
     if (savedValues) {
@@ -42,6 +55,8 @@ const AddProductPage = () => {
       category: selectedOption.value,
       name: selectedProduct.name,
       price: price,
+      image:image
+
     };
     setNewProducts([...newProducts, newValue]);
   };
@@ -69,6 +84,7 @@ const AddProductPage = () => {
       key={index}
       name={product.name}
       price={product.price}
+      image={product.image}
       text='Everything you need'
     />
   ));
@@ -126,7 +142,27 @@ const AddProductPage = () => {
               onChange={(e) => setPrice(e.target.value)}
             />
           </div>
-          <div className='w-full h-full ml-5 mt-5 '>
+          <div className="w-1/2 mx-auto mt-8">
+      <div className="flex items-center justify-center w-full h-48 bg-gray-100 border-dashed border-2 border-gray-400 rounded-lg">
+        {image ? (
+          <img src={URL.createObjectURL(image)} alt="Selected Image" className="h-full rounded-lg" />
+        ) : (
+          <span className="text-gray-500">Select an image</span>
+        )}
+      </div>
+      <div className="mt-4">
+        <input type="file" onChange={handleImageChange} accept="image/*" className="hidden" id="image-upload" />
+        <label htmlFor="image-upload" className="w-full px-4 py-2 text-sm text-white bg-green-500 rounded-lg cursor-pointer hover:bg-green-600 transition duration-200 ease-in-out">
+          Select Image
+        </label>
+      </div>
+      {/* {image && (
+        <button type="button" onClick={handleImageUpload} className="mt-4 w-full px-4 py-2 text-sm text-white bg-blue-500 rounded-lg hover:bg-blue-600 transition duration-200 ease-in-out">
+          Upload Image
+        </button>
+      )} */}
+    </div>
+          {/* <div className='w-full h-full ml-5 mt-5 '>
             <label className='text-lg text-gray-700  font-bold font-sans ml-3'>
               Select Image
             </label>
@@ -141,10 +177,11 @@ const AddProductPage = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
 
           <button
             type='submit'
+            onClick={handleImageUpload}
             className=' w-1/4  h-10 mx-auto rounded mb-5 mt-5 mr-10 text-xl bg-green-950  text-white'
           >
             Submit
@@ -155,6 +192,7 @@ const AddProductPage = () => {
       <div className=' xl:absolute xl:bottom-5  max-w-screen-xl bg-teal-50 px-3 xl:w-2/5  h-100 mx-auto flex flex-col justify-center items-center  mb-10 gap-3'>
         {/* {productsCards} */}
         <ProductPage ItemCards={productsCards} />
+        {/* <img src={image} alt=''/> */}
       </div>
     </div>
   );

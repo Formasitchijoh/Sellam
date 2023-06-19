@@ -1,3 +1,9 @@
+import laptop from '../resource/laptop.jpg'
+import earpods from '../resource/earpods.jpg'
+import phone from '../resource/phone.jpg'
+
+
+
 const AllProductArray = [
   {
     Category: "Electronics",
@@ -8,7 +14,7 @@ const AllProductArray = [
         price: 1000,
         discPrice: 0,
         status: "available",
-        image: "",
+        image: laptop,
         shops: [
           {
             name: "Omega shop",
@@ -42,7 +48,7 @@ const AllProductArray = [
         price: 50000,
         discPrice: 0,
         status: "available",
-        image: "",
+        image: earpods,
         shops: [
           {
             name: "Omega shop",
@@ -76,7 +82,109 @@ const AllProductArray = [
         price: 5000,
         discPrice: 0,
         status: "available",
-        image: "",
+        image: phone,
+        shops: [
+          {
+            name: "Omega shop",
+            market: "OIC",
+          },
+          {
+            name: "Live Score",
+            market: "Muea",
+          },
+          {
+            name: "Bazzar shop",
+            market: "OIC",
+          },
+          {
+            name: "Young Generation",
+            market: "Bitingi",
+          },
+          {
+            name: "Spend Mony",
+            market: "Muea",
+          },
+          {
+            name: "Momo me",
+            market: "Bitingi",
+          },
+        ],
+      },
+      {
+        name: "Blender",
+        id: 1,
+        price: 1000,
+        discPrice: 0,
+        status: "available",
+        image: laptop,
+        shops: [
+          {
+            name: "Omega shop",
+            market: "OIC",
+          },
+          {
+            name: "Live Score",
+            market: "Muea",
+          },
+          {
+            name: "Bazzar shop",
+            market: "OIC",
+          },
+          {
+            name: "Young Generation",
+            market: "Bitingi",
+          },
+          {
+            name: "Spend Mony",
+            market: "Muea",
+          },
+          {
+            name: "Momo me",
+            market: "Bitingi",
+          },
+        ],
+      },
+      {
+        name: "Laptop",
+        id: 2,
+        price: 50000,
+        discPrice: 0,
+        status: "available",
+        image: earpods,
+        shops: [
+          {
+            name: "Omega shop",
+            market: "OIC",
+          },
+          {
+            name: "Live Score",
+            market: "Muea",
+          },
+          {
+            name: "Bazzar shop",
+            market: "OIC",
+          },
+          {
+            name: "Young Generation",
+            market: "Bitingi",
+          },
+          {
+            name: "Spend Mony",
+            market: "Muea",
+          },
+          {
+            name: "Momo me",
+            market: "Bitingi",
+          },
+        ],
+      },
+      {
+        name: "Electric coil",
+        id: 3,
+        price: 5000,
+        discPrice: 0,
+        status: "available",
+        image: phone,
         shops: [
           {
             name: "Omega shop",
@@ -115,7 +223,7 @@ const AllProductArray = [
         price: 100000,
         discPrice: 0,
         status: "available",
-        image: "",
+        image: {phone},
         shops: [
           {
             name: "Omega shop",
@@ -149,7 +257,7 @@ const AllProductArray = [
         price: 50000,
         discPrice: 0,
         status: "available",
-        image: "",
+        image: {laptop},
         shops: [
           {
             name: "Omega shop",
@@ -183,7 +291,7 @@ const AllProductArray = [
         price: 40000,
         discPrice: 0,
         status: "available",
-        image: "",
+        image: {earpods},
         shops: [
           {
             name: "Omega shop",
@@ -222,7 +330,7 @@ const AllProductArray = [
         price: 1000,
         discPrice: 0,
         status: "available",
-        image: "",
+        image: {laptop},
         shops: [
           {
             name: "ManiAgi shop",
@@ -256,7 +364,7 @@ const AllProductArray = [
         price: 50000,
         discPrice: 0,
         status: "available",
-        image: "",
+        image: {laptop},
         shops: [
           {
             name: "Omega shop",
@@ -290,7 +398,7 @@ const AllProductArray = [
         price: 5000,
         discPrice: 0,
         status: "available",
-        image: "",
+        image: {phone},
         shops: [
           {
             name: "Omega shop",
@@ -323,7 +431,7 @@ const AllProductArray = [
         price: 5000,
         id: 4,
         discPrice: 0,
-        image: "",
+        image: {earpods},
         shops: [
           {
             name: "Omega shop",
