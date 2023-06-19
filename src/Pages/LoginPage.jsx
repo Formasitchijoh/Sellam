@@ -91,7 +91,9 @@ const LoginPage = () => {
             <hr className="w-2/5 h-1 bg-gray-500"></hr>
           </div>
           <button type="submit" className="w-1/4 h-10 rounded text-2xl font-bold flex justify-center items-center mx-auto  mt-8 bg-green-950  text-white">
-            Login
+           
+           <Link to="/ProductItem">Login
+           </Link> 
           </button>
         </form>
       </div>

@@ -8,7 +8,7 @@ import NavbarComponent from "../Component/Material-Tailwind/NavbarComponent";
 function UpdateProduct() {
   const [items, setItems] = useState([
     {
-      img: <img src={egussi} alt="item" class="w-full h-80 rounded-lg " />,
+      img: <img src={egussi} alt="item" class="w-full h-1/4 rounded-lg " />,
       name: "egussi",
       id: 1,
       price: 1000,
@@ -19,7 +19,7 @@ function UpdateProduct() {
       needEdit: false,
     },
     {
-      img: <img src={plantain} alt="item" class="w-full h-80 rounded-lg" />,
+      img: <img src={plantain} alt="item" class="w-full h-1/4 rounded-lg" />,
       name: "plantain",
       id: 2,
       price: 3000,
@@ -30,7 +30,7 @@ function UpdateProduct() {
       needEdit: false,
     },
     {
-      img: <img src={garri} alt="item" class="w-full h-80 rounded-lg" />,
+      img: <img src={garri} alt="item" class="w-full h-1/4 rounded-lg" />,
       name: "garri",
       id: 3,
       price: 2000,
@@ -41,7 +41,7 @@ function UpdateProduct() {
       needEdit: false,
     },
     {
-      img: <img src={garri} alt="item" class="w-full h-80 rounded-lg" />,
+      img: <img src={garri} alt="item" class="w-full h-1/4rounded-lg" />,
       name: "garri",
       id: 3,
       price: 2000,

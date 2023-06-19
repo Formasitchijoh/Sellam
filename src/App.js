@@ -13,6 +13,7 @@ import ItemPage from "./Pages/ItemPage";
 import LandingPage from "./Pages/LandingPage";
 import UpdateProduct from "./Pages/UpdateProduct";
 import TestPage from "./Pages/TestPage";
+import BuyerPage from "./Pages/BuyerPage";
 const App = () => {
   return (
     <BrowserRouter>
@@ -27,7 +28,8 @@ const App = () => {
         <Route path="/ItemPage" Component={ItemPage} />
         <Route path="/ProductItem" Component={ProductItem} />
         <Route path="/UpdateProduct" Component={UpdateProduct} />
-        <Route path="/TestPage" Component={TestPage} />
+        {/* <Route path="/TestPage" Component={TestPage} /> */}
+        <Route path="/BuyerPage" Component={BuyerPage}/>
       </Routes>
     </BrowserRouter>
   );

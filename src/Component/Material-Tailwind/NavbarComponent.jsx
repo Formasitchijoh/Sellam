@@ -48,11 +48,11 @@ const NavbarComponent = () => {
           Buyer Product
         </Link>
       </Typography> */}
-      {/* <Typography as="li" variant="small" color="blue-gray" className="p-1 font-normal">
+      <Typography as="li" variant="small" color="blue-gray" className="p-1 font-normal">
         <Link to="/TestPage" className="flex items-center text-white">
           Test
         </Link>
-      </Typography> */}
+      </Typography>
     </ul>
   );
 
@@ -86,6 +86,7 @@ const NavbarComponent = () => {
                     <img className="w-1/4 h-1/4 rounded-full bg-white" src={avatar} alt="avatar" />
                     <p className="text-gray-900 text-xl">Abomganu Alfred</p>
                   </div>
+
                   {/* <Link to='/'>Home</Link>
               <Link to='ProductPage'>Shops</Link>
               <Link to='SignUpPage'>SignUp</Link>
@@ -93,6 +94,7 @@ const NavbarComponent = () => {
               <Link to='AddProductPage'>AddProduct</Link>
               <Link to='LandingPage'>LandingPage</Link>
               <Link to='ItemPage'>Item</Link> */}
+
 
                   <li className="border-b-2  w-full border-gray-900">
                     <Link to="/ProductItem" className="flex items-center text-white">
