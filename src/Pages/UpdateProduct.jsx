@@ -69,10 +69,11 @@ function UpdateProduct() {
   function handleStatus(e) {
     setStatusValue(e.target.value);
   }
+  
   function editItem(id) {
     setItems((items) => {
       return items.map((item) => {
-        return item.id === id ? { ...item, needEdit: !item.needEdit } : item;
+        return item.id === id ? { ...item, needEdit: !item.needEdit, status:statusValue } : item;
       });
     });
   }

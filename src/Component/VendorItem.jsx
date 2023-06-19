@@ -18,7 +18,8 @@ export default function VendorItem(props) {
     // setVissibleDis(true);
     props.giveDiscount();
   }
-  function updateStatus() {
+  function updateStatus(e) {
+    e.preventDefault();
     // setVissibleEdit(true);
     props.editItem();
   }
@@ -30,12 +31,14 @@ export default function VendorItem(props) {
         <div class="rounded-2xl px-3 py-4">{props.img}</div>
         <div class="flex justify-between px-1 ">
           <p class=" my-2 mx-18p text-xl">{props.name}</p>
-          <p class=" my-2 mx-18p text-xl ">CFA {props.price}</p>
+          <p class=" my-2 mx-18p text-xl " style={{ textDecoration: props.discPrice !== 0 ? "line-through" : "none" }}>
+            CFA {props.price}
+          </p>
         </div>
         <div class=" text-lg flex justify-end">
           <p class="  mx-18p text-lg text-green-900 font-bold">CFA {props.discPrice}</p>
         </div>
-        <div class="font-semibold text-lg mt-1 flex justify-end">
+        <div class="font-semibold text-gray-700 text-lg mt-1 flex justify-end">
           <p>{props.status}</p>
         </div>
         <div class="flex flex-row mt-6 py-1 justify-between">
@@ -97,6 +100,9 @@ export default function VendorItem(props) {
             <br />
             <input type="radio" name="statusValue" id="not available" value="not available" onChange={props.handleStatus} />
             <label htmlFor="not available">not available</label>
+            <button type="submit" onClick={() => setVissibleEdit(false)} class="bg-green-600 px-8 py-3 mt-3 ml-40 rounded-lg">
+              Submit
+            </button>
           </form>
           {/* <div class="h-18 flex pt-6 justify-between">
             <button class="bg-green-700 px-8  py-4 my-2 rounded-lg" onClick={() => setVissibleDel(false)}>
@@ -106,9 +112,6 @@ export default function VendorItem(props) {
               <p>Delete</p>
             </button>
           </div> */}
-          <button type="submit" onClick={() => setVissibleEdit(false)} class="bg-green-600 px-8 py-3 mt-3 ml-40 rounded-lg">
-            Submit
-          </button>
         </div>
       </div>
     </div>
