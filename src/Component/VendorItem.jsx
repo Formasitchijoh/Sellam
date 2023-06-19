@@ -13,8 +13,9 @@ export default function VendorItem(props) {
     setVissibleDel(false);
     props.deleteItem();
   }
-  function promotion() {
-    setVissibleDis(true);
+  function promotion(e) {
+    e.preventDefault();
+    // setVissibleDis(true);
     props.giveDiscount();
   }
   function updateStatus() {
@@ -24,11 +25,20 @@ export default function VendorItem(props) {
 
   return (
     // <div class=" bg-blue-300 flex ">
-    <div class="bg-green-200 p-2 align-top max-full h-auto inline-block sm:w-1/2 md:w-1/3 xl:w-1/4">
-      <div class="bg-gray-100 p-1">
-        <div class="bg-red-600">{props.img}</div>
-        <p class=" my-6 mx-18p text-lg">{props.name}</p>
-        <div class="flex flex-row mt-0 bg-gray-400 justify-around">
+    <div class="bg-white p-2 align-top max-full h-auto inline-block sm:w-1/2 md:w-1/3 xl:w-1/4">
+      <div class="bg-gray-200 py-4 px-2 rounded-3xl">
+        <div class="rounded-2xl px-3 py-4">{props.img}</div>
+        <div class="flex justify-between px-1 ">
+          <p class=" my-2 mx-18p text-xl">{props.name}</p>
+          <p class=" my-2 mx-18p text-xl ">CFA {props.price}</p>
+        </div>
+        <div class=" text-lg flex justify-end">
+          <p class="  mx-18p text-lg text-green-900 font-bold">CFA {props.discPrice}</p>
+        </div>
+        <div class="font-semibold text-lg mt-1 flex justify-end">
+          <p>{props.status}</p>
+        </div>
+        <div class="flex flex-row mt-6 py-1 justify-between">
           <button class="bg-red-800 p-1 m-1 rounded-lg flex flex-row" onClick={() => setVissibleDel(true)}>
             <img src={delet} alt="del" class="h-9 w-5" />
             <p class="text-gray-800 ml-1 mt-1">Delete</p>
@@ -37,7 +47,7 @@ export default function VendorItem(props) {
             <img src={discount} alt="discount" class="h-9 w-6" />
             <p class="text-gray-800 ml-1 mt-1">Discount</p>
           </button>
-          <button class="bg-white flex flex-row p-1 m-1 rounded-lg" onClick={() => setVissibleEdit(true)}>
+          <button class="bg-white flex flex-row py-1 px-3 m-1 rounded-lg" onClick={() => setVissibleEdit(true)}>
             <img src={edit} alt="edit" class="h-9 w-5" />
             <p class="text-gray-800 ml-1 mt-1">Edit</p>
           </button>
@@ -63,7 +73,7 @@ export default function VendorItem(props) {
         </div>
 
         <div class="bg-green-200 top-1/3 w-full p-6 h-92 sm:left-1/4 sm:w-2/4 absolute" style={{ display: vissibleDis === false ? "none" : "block" }}>
-          <div class=" m-auto max-w-lg rounded-2xl bg-gray-200">
+          <div class=" m-auto max-w-lg py-1 rounded-2xl bg-gray-200">
             <p class="font-bold text-xl text-center">Discount</p>
             <form onSubmit={promotion}>
               <input type="text" onChange={props.handleDiscount} value={props.discountPrice} placeholder="enter amount" class=" h-12 border-4 border-gray-300 text-gray-800 text-lg w-64 rounded-sm py-4 m-4 focus:bg-gray-100 "></input>
