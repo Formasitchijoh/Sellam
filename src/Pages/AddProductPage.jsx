@@ -4,6 +4,7 @@ import Select from 'react-select';
 import NavbarComponent from '../Component/Material-Tailwind/NavbarComponent';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import AllProductArray from '../Data/AllProduct';
 const options = [
   { value: 'option1', label: 'Option 1' },
   { value: 'option2', label: 'Option 2' },
@@ -18,20 +19,24 @@ function Fab() {
   );
 }
 
-const Addpdt = () => {
- 
-  fetch(' https://192.168.43.56/market_management/THE%20NEW/add_productt.php')
-  .then(response => response.json())
-  .then(data => {
-    console.log(data);
-  });
-}
 const AddProductPage = () => {
   const [newProduct, setnewProduct] = useState({
     category:'',
     name:'',
     price:'',
   })
+  const [selectedOption, setselectedOption] = useState(null)
+  const [selectedName, setselectedName] = useState(null)
+const handleSelect = (e) => {
+  setselectedOption(e)
+}
+const handleSelectName = (e) => {
+  setselectedName(e)
+}
+const {category, products } = AllProductArray[1]
+const productsName = products.map((product) => (
+          product.name
+))
   
   return (
     
@@ -47,18 +52,35 @@ const AddProductPage = () => {
             <label className='text-lg text-gray-700 font-bold font-sans ml-3'>Category</label>
               <Select
               placeholder='Category'
+              value={selectedOption}
+              options={AllProductArray}
+              onChange={handleSelect}
               className='w-11/12  ml-3  h-5 mb-5 xl:w-3/4'
-              options={options} />
+              getOptionLabel={e => (
+                <div>
+                  <span>{e.Category}</span>
+                </div>
+              )} 
+            
+            />
             </div>
-    
-          <div className='w-full mt-5 block'>
-              <label className='text-lg text-gray-700 font-bold font-sans ml-3'>Product Name</label>
-                <Select
-                placeholder='Product Name'
-              className='w-11/12  ml-3  h-5 mb-5 xl:w-3/4 '
-              options={options} />
+            <div className='w-full xl:w-full mt-5 '>
+            <label className='text-lg text-gray-700 font-bold font-sans ml-3'>Product Name</label>
+              <Select
+              placeholder='Product Name'
+              value={selectedName}
+              options={products}
+              onChange={handleSelectName}
+              className='w-11/12  ml-3  h-5 mb-5 xl:w-3/4'
+              getOptionLabel={e => (
+                <div>
+                  <span>{e.name}</span>
+                </div>
+              )} 
+            
+            />
+            </div>
 
-          </div>
           <div className='w-full mx-auto flex flex-col p-3 mb-3'>
         <label  className='text-lg  font-sans font-bold text-gray-900'>Price</label>
         <input className='w-full xl:w-4/5 h-10 lg:w-4/5 border-solid-3 focus-visible:  rounded' />

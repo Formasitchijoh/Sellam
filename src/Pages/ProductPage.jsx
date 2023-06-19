@@ -10,6 +10,7 @@ import Menu from '../Component/Menu'
 import selectItems from '../Component/datastore'
 import CardComponent from '../Component/cardComponent'
 import { Card } from '@material-tailwind/react'
+import AllProductArray from '../Data/AllProduct'
 
 const ProductCarts = (props) => {
   return(
@@ -33,10 +34,17 @@ const ProductPage = () => {
           <CardComponent image={yam}/>
           <CardComponent image={egusi}/>
           <CardComponent image={garri}/>
-          {/* <CardComponent image={yam}/>
+          <CardComponent image={yam}/>
           <CardComponent image={egusi}/>
           <CardComponent image={garri}/>
-          <CardComponent image={yam}/> */}
+          <CardComponent image={yam}/>
+          <CardComponent image={yam}/>
+          <CardComponent image={egusi}/>
+          <CardComponent image={garri}/>
+          <CardComponent image={yam}/>
+          <CardComponent image={egusi}/>
+          <CardComponent image={garri}/>
+          <CardComponent image={yam}/>
 
        
       </ul>
