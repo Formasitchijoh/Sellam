@@ -20,7 +20,7 @@ const NavbarComponent = () => {
   const navList = (
     <ul className="mb-4 mt-2 flex flex-col gap-2 lg:mb-0 lg:flex-row lg:items-center lg:gap-6">
       <Typography as="li" variant="small" color="blue-gray" className="p-1 font-normal">
-        <Link to="/ProductPage" className="flex items-center text-white">
+        <Link to="/" className="flex items-center text-white">
           Home
         </Link>
       </Typography>
@@ -60,6 +60,11 @@ const NavbarComponent = () => {
       <Typography as="li" variant="small" color="blue-gray" className="p-1 font-normal">
         <Link to="/BuyerProduct" className="flex items-center text-white">
           Buyer Product
+        </Link>
+      </Typography>
+      <Typography as="li" variant="small" color="blue-gray" className="p-1 font-normal">
+        <Link to="/TestPage" className="flex items-center text-white">
+          Test
         </Link>
       </Typography>
     </ul>

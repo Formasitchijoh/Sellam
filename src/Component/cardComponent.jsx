@@ -21,14 +21,14 @@ const CardComponent = (props) => {
       <CardBody>
         <div className="flex items-center justify-between mb-2">
           <Typography color="blue-gray" className="font-medium">
-            Egusi
+            {props.name}
           </Typography>
           <Typography color="blue-gray" className="font-medium">
-            $95.00
+            {props.price}
           </Typography>
         </div>
         <Typography variant="small" color="gray" className="text-sm opacity-75">
-         Everything you need, 
+        {props.text}
         </Typography>
       </CardBody>
       <CardFooter className="pt-0">

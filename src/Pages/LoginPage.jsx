@@ -65,7 +65,7 @@ const LoginPage = () => {
                 e.preventDefault();
 
                 axios
-                .post('https://192.168.43.56/market_management/THE%20NEW/loginn.php',loginDetails,{
+                .post('http://192.168.157.144/market_management/THE%20NEW/loginn.php',loginDetails,{
                     headers:{"Content-Type":"application/json",},
                 } )
 
