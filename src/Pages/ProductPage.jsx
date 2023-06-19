@@ -12,42 +12,49 @@ import CardComponent from '../Component/cardComponent'
 import { Card } from '@material-tailwind/react'
 import AllProductArray from '../Data/AllProduct'
 
-const ProductCarts = (props) => {
-  return(
-      <div className='ml-2 bg-green-100 border-5 border-teal-300 flex flex-col h-1/4 w-1/4 xl:w-1/2 xl:h-1/4 justify-center items-center rounded-lg shadow-sm '>
-              <img className='w-1/2 h-20 pt-2' src={props.food} alt='garri' />
+// const ProductCarts = (props) => {
+//   return(
+//       <div className='ml-2 bg-green-100 border-5 border-teal-300 flex flex-col h-1/4 w-1/4 xl:w-1/2 xl:h-1/4 justify-center items-center rounded-lg shadow-sm '>
+//               <img className='w-1/2 h-20 pt-2' src={props.food} alt='garri' />
           
-          <div className=''>
-          <span className='text-xl font-serif font-sans text-gray-800 tracking-tighter font-semibold mt-1 '>Calabar Garri</span><br/>
-              <span className='text-xl font-serif font-sans text-gray-800 tracking-tighter font-semibold mt-1'>2,000 XAF</span>
+//           <div className=''>
+//           <span className='text-xl font-serif font-sans text-gray-800 tracking-tighter font-semibold mt-1 '>Calabar Garri</span><br/>
+//               <span className='text-xl font-serif font-sans text-gray-800 tracking-tighter font-semibold mt-1'>2,000 XAF</span>
               
-          </div>
+//           </div>
 
-      </div>
-  )
-}
-const ProductPage = () => {
+//       </div>
+//   )
+// }
+
+const cardArray = [
+  <CardComponent name='yam' price='$95' text='Everything you need' image={yam}/>,
+  <CardComponent name='egusi' price='$95' text='Everything you need' image={egusi}/>,
+  <CardComponent name='garri' price='$95' text='Everything you need' image={garri}/>,
+  <CardComponent name='yam' price='$95' text='Everything you need' image={yam}/>,
+  <CardComponent  name='egsusi' price='$95' text='Everything you need' image={egusi}/>,
+  <CardComponent name='garri' price='$95' text='Everything you need' image={garri}/>,
+  <CardComponent name='yam' price='$95' text='Everything you need' image={yam}/>,
+  <CardComponent name='yam' price='$95' text='Everything you need' image={yam}/>,
+  <CardComponent name='egusi' price='$95' text='Everything you need' image={egusi}/>,
+  <CardComponent name='garri' price='$95' text='Everything you need' image={garri}/>,
+  <CardComponent name='yam' price='$95' text='Everything you need' image={yam}/>,
+  <CardComponent name='egusi' price='$95' text='Everything you need' image={egusi}/>,
+  <CardComponent name='garri' price='$95' text='Everything you need' image={garri}/>,
+  <CardComponent name='yam' price='$95' text='Everything you need' image={yam}/>
+
+]
+
+
+const ProductPage = (props) => {
   return (
 
     <div >
-        <ul className='grid xl:grid-cols-4 xl:gap-4 sm:grid-cols-2 '>
-          <CardComponent name='yam' price='$95' text='Everything you need' image={yam}/>
-          <CardComponent name='egusi' price='$95' text='Everything you need' image={egusi}/>
-          <CardComponent name='garri' price='$95' text='Everything you need' image={garri}/>
-          <CardComponent name='yam' price='$95' text='Everything you need' image={yam}/>
-          <CardComponent  name='egsusi' price='$95' text='Everything you need' image={egusi}/>
-          <CardComponent name='garri' price='$95' text='Everything you need' image={garri}/>
-          <CardComponent name='yam' price='$95' text='Everything you need' image={yam}/>
-          <CardComponent name='yam' price='$95' text='Everything you need' image={yam}/>
-          <CardComponent name='egusi' price='$95' text='Everything you need' image={egusi}/>
-          <CardComponent name='garri' price='$95' text='Everything you need' image={garri}/>
-          <CardComponent name='yam' price='$95' text='Everything you need' image={yam}/>
-          <CardComponent name='egusi' price='$95' text='Everything you need' image={egusi}/>
-          <CardComponent name='garri' price='$95' text='Everything you need' image={garri}/>
-          <CardComponent name='yam' price='$95' text='Everything you need' image={yam}/>
-
-       
-      </ul>
+         <ul className='grid xl:grid-cols-4 xl:gap-4 sm:grid-cols-2 '>
+         
+         {props.ItemCards}
+          
+         </ul>
        
     </div>
   )
