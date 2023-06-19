@@ -190,7 +190,7 @@ const AddProductPage = () => {
       </form>
 
       <div className='  max-w-screen-xl bg-teal-50 px-3 xl:w-1/2  xl:h-1/2 mx-auto flex flex-col justify-center items-center  mb-10 gap-3'>
-        {/* {productsCards} */}
+        <h1 className='text-3xl text-green-900 '>My Products</h1>
         <ProductPage ItemCards={productsCards} />
         {/* <img src={image} alt=''/> */}
       </div>
