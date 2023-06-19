@@ -9,7 +9,8 @@ const Tabs = () => {
       <TabComponents>
       
         <TabItem label='My Products'>
-            <ProductPage/>
+        <Category1/>
+
         </TabItem>
        
         <TabItem label="Cash Crops">

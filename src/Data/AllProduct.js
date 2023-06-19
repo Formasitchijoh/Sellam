@@ -1,7 +1,11 @@
 import laptop from '../resource/laptop.jpg'
 import earpods from '../resource/earpods.jpg'
 import phone from '../resource/phone.jpg'
-
+import item1 from '../resource/blender.png'
+import item2 from '../resource/carrot.jpg'
+import item3 from '../resource/egusi.jpg'
+import item4 from '../resource/fish.jpg'
+import item5 from '../'
 
 
 const AllProductArray = [
